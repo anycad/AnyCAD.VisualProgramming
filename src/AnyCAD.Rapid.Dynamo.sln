@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{46198EBE-75CD-4105-B214-F4250F410800}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6AEC4E8E-A6E5-47C3-8A90-73D6BCB2345B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.SandBox", "AnyCAD.Rapid.Dynamo.SandBox\AnyCAD.Rapid.Dynamo.SandBox.csproj", "{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Services", "AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj", "{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Startup", "AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj", "{FD52B2EA-4105-4547-AB8C-C6167DE06430}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD52B2EA-4105-4547-AB8C-C6167DE06430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD52B2EA-4105-4547-AB8C-C6167DE06430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD52B2EA-4105-4547-AB8C-C6167DE06430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD52B2EA-4105-4547-AB8C-C6167DE06430}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2} = {46198EBE-75CD-4105-B214-F4250F410800}
+		{FD52B2EA-4105-4547-AB8C-C6167DE06430} = {46198EBE-75CD-4105-B214-F4250F410800}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08B57BD5-0877-4DA8-931E-7BCF10FBAEB2}
+	EndGlobalSection
+EndGlobal

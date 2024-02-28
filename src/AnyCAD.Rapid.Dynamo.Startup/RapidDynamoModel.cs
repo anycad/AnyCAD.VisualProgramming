@@ -19,7 +19,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
 
         public new static RapidDynamoModel Start()
         {
-            var isASMloaded = PreloadASM(RapidPathResolver.GetDynamoCorePath(), out string geometryFactoryPath, out string preloaderLocation);
+            var isASMloaded = PreloadASM(string.Empty, out string geometryFactoryPath, out string preloaderLocation);
             var config = new DefaultStartConfiguration
             {
                 GeometryFactoryPath = geometryFactoryPath,

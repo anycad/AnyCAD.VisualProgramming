@@ -25,4 +25,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if exist $(ProjectDir)PostBuildStep.bat call $(ProjectDir)PostBuildStep.bat $(OutputPath)" />
+  </Target>
+
 </Project>

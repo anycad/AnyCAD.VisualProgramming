@@ -35,18 +35,6 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         public bool StartDynamo()
         {
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
-            mDynamoCorePath = RapidPathResolver.GetDynamoCorePath();
-            if (Directory.Exists(mDynamoCorePath))
-            {
-                var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                var assemblyDirectory = Path.GetDirectoryName(assemblyLocation);
-                // check dynamo runtime, if not exist, copy here
-                CopyFilesRecursively(mDynamoCorePath, assemblyDirectory);
-            }
-            else
-            {
-                return false;
-            }
 
             mDynamoModel = RapidDynamoModel.Start();
 
@@ -118,18 +106,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             var assemblyName = new AssemblyName(args.Name).Name + ".dll";
 
             try
-            {
-                //string assemblyPath = Path.Combine(mDynamoCorePath, assemblyName);
-                //if (File.Exists(assemblyPath))
-                //    return Assembly.LoadFrom(assemblyPath);
-
-                //if (!Equals(Thread.CurrentThread.CurrentCulture, CultureInfo.InvariantCulture))
-                //{
-                //    assemblyPath = Path.Combine(mDynamoCorePath, Thread.CurrentThread.CurrentCulture.Name, assemblyName);
-                //    if (File.Exists(assemblyPath))
-                //        return Assembly.LoadFrom(assemblyPath);
-                //}  
-
+            {  
                 var assemblyLocation = Assembly.GetExecutingAssembly().Location;
                 var assemblyDirectory = Path.GetDirectoryName(assemblyLocation);
 
@@ -145,38 +122,6 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             catch (Exception ex)
             {
                 throw new Exception(string.Format("The location of the assembly, {0} could not be resolved for loading.", assemblyName), ex);
-            }
-        }
-
-        /// <summary>
-        /// Add the main exec path to the system PATH
-        /// This is required to pickup certain dlls.
-        /// </summary>
-        private void UpdateSystemPathForProcess()
-        {
-            var path =
-                    Environment.GetEnvironmentVariable(
-                        "Path",
-                        EnvironmentVariableTarget.Process) + ";" + mDynamoCorePath;
-            Environment.SetEnvironmentVariable("Path", path, EnvironmentVariableTarget.Process);
-        }
-
-        private void CopyFilesRecursively(string sourcePath, string targetPath)
-        {
-            //Now Create all of the directories
-            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
-            {
-                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
-            }
-
-            //Copy all the files & Replaces any files with the same name
-            foreach (string sourceFilePath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
-            {
-                var targetFilePath = sourceFilePath.Replace(sourcePath, targetPath);
-                if (!File.Exists(targetFilePath))
-                {
-                    File.Copy(sourceFilePath, targetFilePath, false);
-                }
             }
         }
     }

@@ -3,7 +3,8 @@ using Dynamo.Interfaces;
 using Dynamo.Models;
 using Dynamo.ViewModels;
 using Dynamo.Wpf.Interfaces;
-using System.Globalization;
+using DyViews = Dynamo.UI.Views;
+
 using System.IO;
 using System.Reflection;
 
@@ -22,22 +23,33 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             }
         }
 
-        private string mDynamoCorePath;
         private RapidDynamoManager()
         {
             
         }
 
+        private DyViews.SplashScreen mSplashScreen;
+        private IEnumerable<string> mUserNodesDll;
+        private string mUserLayoutSpecs;
+        public bool StartDynamo(IEnumerable<string> userNodesDll, string userLayoutSpecs)
+        {
+            mUserNodesDll = userNodesDll;
+            mUserLayoutSpecs = userLayoutSpecs;
+            AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
+
+            mSplashScreen = new();
+            mSplashScreen.DynamicSplashScreenReady += LoadDynamoView;
+            mSplashScreen.Show();
+
+            return true;
+        }
+
         private DynamoViewModel? mDynamoViewModel;
         private DynamoView? mDynamoView;
         private DynamoModel? mDynamoModel;
-
-        public bool StartDynamo(IEnumerable<string> userNodesDll, string userLayoutSpecs)
+        private void LoadDynamoView()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
-
-            mDynamoModel = RapidDynamoModel.Start(userNodesDll);
-
+            mDynamoModel = RapidDynamoModel.Start(mUserNodesDll);
             mDynamoViewModel = RapidDynamoViewModel.Start(
                    new DynamoViewModel.StartConfiguration()
                    {
@@ -47,10 +59,12 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                    });
 
             mDynamoView = new DynamoView(mDynamoViewModel);
-            mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec(userLayoutSpecs);
+            mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec(mUserLayoutSpecs);
             mDynamoView.Show();
             mDynamoView.Activate();
-            return true;
+
+            mSplashScreen.DynamicSplashScreenReady -= LoadDynamoView;
+            mSplashScreen.Close();
         }
 
         /// <summary>

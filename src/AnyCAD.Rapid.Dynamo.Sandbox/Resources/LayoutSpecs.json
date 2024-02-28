@@ -9,23 +9,18 @@
       "childElements": [
         {
           "text": "AnyCAD",
-          "iconUrl": "/icons/Category.AnyCAD.svg",
           "elementType": "category",
           "include": [],
           "childElements": [
             {
-              "text": "Elements",
+              "text": "UserElements",
               "iconUrl": "",
               "elementType": "group",
               "include": [
                 {
-                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.ElementNode"
-                },
-                {
-                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.ShapeElementNode"
+                  "path": "AnyCAD.UserNodes.AnyCAD.UserNodes.Elements.UserShapeElementNode"
                 }
-              ],
-              "childElements": []
+              ]
             }
           ]
         }

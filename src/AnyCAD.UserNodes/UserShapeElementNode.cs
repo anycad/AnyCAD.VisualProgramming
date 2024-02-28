@@ -1,11 +1,12 @@
 ﻿using Autodesk.DesignScript.Geometry;
-
+using DynamoServices;
 using AnyCAD.Foundation;
-using AnyCAD.Rapid.Dynamo.CoreNodes.Elements;
-using AnyCAD.Rapid.Dynamo.CoreNodes.Extension;
+using AnyCAD.CoreNodes.Elements;
+using AnyCAD.CoreNodes.Extension;
 
-namespace UserNodes
+namespace AnyCAD.UserNodes.Elements
 {
+    [RegisterForTrace]
     public class UserShapeElementNode : ShapeElementNode
     {
         private UserShapeElementNode(TopoShape topoShape)

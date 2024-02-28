@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using System.Reflection;
+using CommunityToolkit.Mvvm.Input;
 using AnyCAD.WPF;
 using AnyCAD.Foundation;
 using AnyCAD.Rapid.Dynamo.Startup;
@@ -91,9 +92,17 @@ namespace AnyCAD.Rapid.Dynamo.SandBox
         {
             var userNodesDll = new List<string>()
             {
-                "AnyCAD.Rapid.Dynamo.UserNodes.dll"
+                "AnyCAD.UserNodes.dll"
             };
-            RapidDynamoManager.Instance.StartDynamo(userNodesDll);
+            var layoutSpecs = GetLayoutSpecsPath();
+            RapidDynamoManager.Instance.StartDynamo(userNodesDll, layoutSpecs);
+        }
+
+        private string? GetLayoutSpecsPath()
+        {
+            var asmLocation = Assembly.GetExecutingAssembly().Location;
+            var asmDirectory = System.IO.Path.GetDirectoryName(asmLocation);
+            return System.IO.Path.Combine(asmDirectory, "Resources", "LayoutSpecs.json");
         }
     }
 }

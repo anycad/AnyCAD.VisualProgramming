@@ -5,7 +5,7 @@ using AnyCAD.Foundation;
 using AnyCAD.Rapid.Dynamo.Services.Elements;
 using AnyCAD.Rapid.Dynamo.Services.Persistence;
 
-namespace AnyCAD.Rapid.Dynamo.CoreNodes.Elements
+namespace AnyCAD.CoreNodes.Elements
 {
     /// <summary>
     /// 

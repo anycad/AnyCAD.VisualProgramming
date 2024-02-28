@@ -32,7 +32,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         private DynamoView? mDynamoView;
         private DynamoModel? mDynamoModel;
 
-        public bool StartDynamo(IEnumerable<string> userNodesDll)
+        public bool StartDynamo(IEnumerable<string> userNodesDll, string userLayoutSpecs)
         {
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
 
@@ -47,7 +47,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                    });
 
             mDynamoView = new DynamoView(mDynamoViewModel);
-            mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec();
+            mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec(userLayoutSpecs);
             mDynamoView.Show();
             mDynamoView.Activate();
             return true;
@@ -57,7 +57,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         /// Updates the Libarary Layout spec to include layout for AnyCAD nodes. 
         /// The AnyCAD layout spec is embeded as resource "LayoutSpecs.json".
         /// </summary>
-        private void UpdateLibraryLayoutSpec()
+        private void UpdateLibraryLayoutSpec(string userLayoutSpecs)
         {
             //Get the library view customization service to update spec
             var customization = mDynamoModel.ExtensionManager.Service<ILibraryViewCustomization>();
@@ -76,6 +76,26 @@ namespace AnyCAD.Rapid.Dynamo.Startup
 
             //The anycadspec should have only one section, add all its child elements to the customization
             var elements = anycadspec.sections.First().childElements;
+
+            //Extend it with the layoutSpecs user provided
+            if (File.Exists(userLayoutSpecs))
+            {
+                try
+                {
+                    var userspec = LayoutSpecification.FromJSONString(File.ReadAllText(userLayoutSpecs));
+                    var userSection = userspec.sections.First();
+                    var userCategroy = userSection.childElements.First();
+
+                    var anycadCategoryToExtend = elements.First(elem => elem.text == "AnyCAD");
+                    anycadCategoryToExtend?.childElements.AddRange(userCategroy.childElements);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(string.Format("Exception while trying to load {0}", userLayoutSpecs));
+                }
+            }
+
+
             customization.AddElements(elements); //add all the elements to default section
         }
 
@@ -101,14 +121,13 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         /// <param name="sender"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public Assembly? ResolveAssembly(object sender, ResolveEventArgs args)
+        private Assembly? ResolveAssembly(object sender, ResolveEventArgs args)
         {
             var assemblyName = new AssemblyName(args.Name).Name + ".dll";
 
             try
             {  
-                var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                var assemblyDirectory = Path.GetDirectoryName(assemblyLocation);
+                var assemblyDirectory = GetExecutingAssemblyDirectory();
 
                 var cultureName = Thread.CurrentThread.CurrentCulture.Name;
                 var candidates = Directory.GetFiles(assemblyDirectory, assemblyName, SearchOption.AllDirectories);
@@ -123,6 +142,12 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             {
                 throw new Exception(string.Format("The location of the assembly, {0} could not be resolved for loading.", assemblyName), ex);
             }
+        }
+
+        private string? GetExecutingAssemblyDirectory()
+        {
+            var assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            return Path.GetDirectoryName(assemblyLocation);
         }
     }
 }

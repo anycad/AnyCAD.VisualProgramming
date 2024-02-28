@@ -36,7 +36,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                 "Tessellation.dll",
                 "Analysis.dll",
                 "GeometryColor.dll",
-                "AnyCAD.Rapid.Dynamo.CoreNodes.dll",
+                "AnyCAD.CoreNodes.dll",
                 .. userNodesDll,
             ];
         }

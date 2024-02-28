@@ -4,9 +4,9 @@ using DynamoServices;
 using AnyCAD.Foundation;
 
 using AnyCAD.Rapid.Dynamo.Services.Persistence;
-using AnyCAD.Rapid.Dynamo.CoreNodes.Extension;
+using AnyCAD.CoreNodes.Extension;
 
-namespace AnyCAD.Rapid.Dynamo.CoreNodes.Elements
+namespace AnyCAD.CoreNodes.Elements
 {
     [RegisterForTrace]
     public class ShapeElementNode : ElementNode

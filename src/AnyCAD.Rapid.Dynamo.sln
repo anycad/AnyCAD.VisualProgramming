@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Startup", "AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj", "{FD52B2EA-4105-4547-AB8C-C6167DE06430}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyCAD.Rapid.Dynamo.CoreNodes", "AnyCAD.Rapid.Dynamo.CoreNodes\AnyCAD.Rapid.Dynamo.CoreNodes.csproj", "{FA6375A7-85E4-48D2-9323-CB161BD466C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyCAD.CoreNodes", "AnyCAD.CoreNodes\AnyCAD.CoreNodes.csproj", "{FA6375A7-85E4-48D2-9323-CB161BD466C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyCAD.Rapid.Dynamo.UserNodes", "AnyCAD.Rapid.Dynamo.UserNodes\AnyCAD.Rapid.Dynamo.UserNodes.csproj", "{30DC3701-4C0E-45B6-8612-3B20B38FBDD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyCAD.UserNodes", "AnyCAD.UserNodes\AnyCAD.UserNodes.csproj", "{30DC3701-4C0E-45B6-8612-3B20B38FBDD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

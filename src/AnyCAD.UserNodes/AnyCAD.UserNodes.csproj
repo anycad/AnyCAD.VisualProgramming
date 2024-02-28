@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnyCAD.Rapid.Dynamo.CoreNodes\AnyCAD.Rapid.Dynamo.CoreNodes.csproj" />
+    <ProjectReference Include="..\AnyCAD.CoreNodes\AnyCAD.CoreNodes.csproj" />
   </ItemGroup>
 
 </Project>

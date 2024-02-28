@@ -1,8 +1,10 @@
 ﻿using Autodesk.DesignScript.Geometry;
 using AnyCAD.Foundation;
+using Autodesk.DesignScript.Runtime;
 
-namespace AnyCAD.Rapid.Dynamo.CoreNodes.Extension
+namespace AnyCAD.CoreNodes.Extension
 {
+    [IsVisibleInDynamoLibrary(false)]
     public static class GeometryExtension
     {
         public static GPnt To(this Point pt)

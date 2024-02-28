@@ -4,4 +4,4 @@ set Output=%1
 echo DynamoRuntime:%DynamoRuntime%
 echo BinaryOutput:%Output%
 
-xcopy %DynamoRuntime% %Output% /e /y
+xcopy %DynamoRuntime% %Output% /e /y /d /exclude:ExcludedFiles.txt

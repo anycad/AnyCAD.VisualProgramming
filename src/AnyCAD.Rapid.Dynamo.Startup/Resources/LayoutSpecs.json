@@ -1,0 +1,48 @@
+{
+  "sections": [
+    {
+      "text": "default",
+      "iconUrl": "",
+      "elementType": "section",
+      "showHeader": false,
+      "include": [],
+      "childElements": [
+        {
+          "text": "AnyCAD",
+          "iconUrl": "/icons/Category.AnyCAD.svg",
+          "elementType": "category",
+          "include": [],
+          "childElements": [
+            {
+              "text": "Elements",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.Rapid.Dynamo.CoreNodes.AnyCAD.Rapid.Dynamo.CoreNodes.Elements.ElementNode"
+                }
+              ],
+              "childElements": [
+                {
+                  "text": "ShapeElement",
+                  "iconUrl": "",
+                  "elementType": "group",
+                  "include": [
+                    {
+                      "path": "AnyCAD.Rapid.Dynamo.CoreNodes.AnyCAD.Rapid.Dynamo.CoreNodes.Elements.ShapeElementNode",
+                      "inclusive": false
+                    },
+                    {
+                      "path": "AnyCAD.Rapid.Dynamo.UserNodes.UserNodes.UserShapeElementNode",
+                      "inclusive": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

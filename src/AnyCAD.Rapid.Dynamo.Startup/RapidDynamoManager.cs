@@ -32,11 +32,11 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         private DynamoView? mDynamoView;
         private DynamoModel? mDynamoModel;
 
-        public bool StartDynamo()
+        public bool StartDynamo(IEnumerable<string> userNodesDll)
         {
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
 
-            mDynamoModel = RapidDynamoModel.Start();
+            mDynamoModel = RapidDynamoModel.Start(userNodesDll);
 
             mDynamoViewModel = RapidDynamoViewModel.Start(
                    new DynamoViewModel.StartConfiguration()
@@ -47,7 +47,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                    });
 
             mDynamoView = new DynamoView(mDynamoViewModel);
-            // mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec();
+            mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec();
             mDynamoView.Show();
             mDynamoView.Activate();
             return true;
@@ -65,11 +65,11 @@ namespace AnyCAD.Rapid.Dynamo.Startup
 
             //Register the icon resource
             customization.RegisterResourceStream("/icons/Category.AnyCAD.svg",
-                GetResourceStream("Dynamo.RapidAnyCAD.Trial.Resources.Category.AnyCAD.svg"));
+                GetResourceStream("AnyCAD.Rapid.Dynamo.Startup.Resources.Category.AnyCAD.svg"));
 
             //Read the anycadspec from the resource stream
             LayoutSpecification anycadspec;
-            using (Stream stream = GetResourceStream("Dynamo.RapidAnyCAD.Trial.Resources.LayoutSpecs.json"))
+            using (Stream stream = GetResourceStream("AnyCAD.Rapid.Dynamo.Startup.Resources.LayoutSpecs.json"))
             {
                 anycadspec = LayoutSpecification.FromJSONStream(stream);
             }

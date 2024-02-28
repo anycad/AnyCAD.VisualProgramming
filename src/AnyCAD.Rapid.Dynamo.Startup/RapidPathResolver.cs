@@ -9,7 +9,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         private readonly List<string> additionalNodeDirectories;
         private readonly List<string> preloadedLibraryPaths;
 
-        public RapidPathResolver(string preloaderLocation)
+        public RapidPathResolver(string preloaderLocation, IEnumerable<string> userNodesDll)
         {
             // If a suitable preloader cannot be found on the system, then do 
             // not add invalid path into additional resolution. The default 
@@ -21,8 +21,8 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                 additionalResolutionPaths.Add(preloaderLocation);
 
             additionalNodeDirectories = new List<string>();
-            preloadedLibraryPaths = new List<string>
-            {
+            preloadedLibraryPaths =
+            [
                 "VMDataBridge.dll",
                 "ProtoGeometry.dll",
                 "DesignScriptBuiltin.dll",
@@ -36,9 +36,9 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                 "Tessellation.dll",
                 "Analysis.dll",
                 "GeometryColor.dll",
-                //"AnyCADNodes.dll"
-            };
-
+                "AnyCAD.Rapid.Dynamo.CoreNodes.dll",
+                .. userNodesDll,
+            ];
         }
 
         public IEnumerable<string> AdditionalResolutionPaths

@@ -17,14 +17,14 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             DisposeLogic.IsShuttingDown = false;
         }
 
-        public new static RapidDynamoModel Start()
+        public static RapidDynamoModel Start(IEnumerable<string> userNodesDll)
         {
             var isASMloaded = PreloadASM(string.Empty, out string geometryFactoryPath, out string preloaderLocation);
             var config = new DefaultStartConfiguration
             {
                 GeometryFactoryPath = geometryFactoryPath,
                 Context = DyConfiguration.Context.NONE,
-                PathResolver = new RapidPathResolver(preloaderLocation),
+                PathResolver = new RapidPathResolver(preloaderLocation, userNodesDll),
                 // TODO: others
             };
             return new RapidDynamoModel(config);

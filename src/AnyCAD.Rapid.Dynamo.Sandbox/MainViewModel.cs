@@ -89,7 +89,11 @@ namespace AnyCAD.Rapid.Dynamo.SandBox
         [RelayCommand]
         void OnOpenDynamo()
         {
-            RapidDynamoManager.Instance.StartDynamo();
+            var userNodesDll = new List<string>()
+            {
+                "AnyCAD.Rapid.Dynamo.UserNodes.dll"
+            };
+            RapidDynamoManager.Instance.StartDynamo(userNodesDll);
         }
     }
 }

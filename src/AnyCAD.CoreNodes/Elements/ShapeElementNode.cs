@@ -8,6 +8,10 @@ using AnyCAD.CoreNodes.GeometryInterop;
 
 namespace AnyCAD.CoreNodes.Elements
 {
+    /// <summary>
+    /// ShapeElementNode，AnyCAD.Foundation.ShapeElement在Dynamo环境下的适配器
+    /// 扩展用于创建ShapeElement的节点时从该类继承并增加自定义的By...静态方法
+    /// </summary>
     [RegisterForTrace]
     public class ShapeElementNode : ElementNode
     {

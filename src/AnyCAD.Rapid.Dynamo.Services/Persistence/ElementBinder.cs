@@ -6,7 +6,7 @@ namespace AnyCAD.Rapid.Dynamo.Services.Persistence
     /// <summary>
     /// ElementBinder
     /// </summary>
-    public class ElementBinder
+    internal class ElementBinder
     {
         // Dynamo use a hard-code slot id for now, we have to use the same one instead of generating a new one
         // private const string ANYCAD_TRACE_ID = "{E416DDA1-9CD0-47D2-83D7-BA07A96F99FA}-ANYCAD";

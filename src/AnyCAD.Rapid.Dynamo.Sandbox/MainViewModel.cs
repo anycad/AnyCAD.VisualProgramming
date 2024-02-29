@@ -95,7 +95,8 @@ namespace AnyCAD.Rapid.Dynamo.Sandbox
                 "AnyCAD.UserNodes.dll"
             };
             var layoutSpecs = GetLayoutSpecsPath();
-            RapidDynamoManager.Instance.StartDynamo(userNodesDll, layoutSpecs);
+            RapidDynamoManager.Instance.ConfigureUserNodes(userNodesDll, layoutSpecs);
+            RapidDynamoManager.Instance.StartDynamo();
         }
 
         private string? GetLayoutSpecsPath()

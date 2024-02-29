@@ -17,8 +17,4 @@
     <ProjectReference Include="..\AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extension\" />
-  </ItemGroup>
-
 </Project>

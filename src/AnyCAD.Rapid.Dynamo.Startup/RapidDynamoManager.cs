@@ -10,9 +10,16 @@ using System.Reflection;
 
 namespace AnyCAD.Rapid.Dynamo.Startup
 {
+    /// <summary>
+    /// RapidDynamoManager，用于管理AnyCAD/Dynamo调用的单例
+    /// </summary>
     public class RapidDynamoManager
     {
         private static RapidDynamoManager mInstance;
+
+        /// <summary>
+        /// 获取单例的Instance
+        /// </summary>
         public static RapidDynamoManager Instance
         {
             get
@@ -29,12 +36,14 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         }
 
         private DyViews.SplashScreen mSplashScreen;
-        private IEnumerable<string> mUserNodesDll;
+        private IEnumerable<string> mUserNodesDll = [];
         private string mUserLayoutSpecs;
-        public bool StartDynamo(IEnumerable<string> userNodesDll, string userLayoutSpecs)
+        /// <summary>
+        /// 启动Dynamo窗口
+        /// </summary>
+        /// <returns></returns>
+        public bool StartDynamo()
         {
-            mUserNodesDll = userNodesDll;
-            mUserLayoutSpecs = userLayoutSpecs;
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
 
             mSplashScreen = new();
@@ -42,6 +51,17 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             mSplashScreen.Show();
 
             return true;
+        }
+
+        /// <summary>
+        /// 配置AnyCAD扩展节点，仅当自定义了扩展节点库时进行设置
+        /// </summary>
+        /// <param name="userNodesDll">包含扩展节点定义的类库dll名称列表</param>
+        /// <param name="userLayoutSpecs">扩展节点目录树结构的配置文件路径</param>
+        public void ConfigureUserNodes(IEnumerable<string> userNodesDll, string userLayoutSpecs)
+        {
+            mUserNodesDll = userNodesDll;
+            mUserLayoutSpecs = userLayoutSpecs;
         }
 
         private DynamoViewModel? mDynamoViewModel;

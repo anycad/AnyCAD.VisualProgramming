@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace AnyCAD.Rapid.Dynamo.Services.Persistence
 {
-    public class ElementIdLifecycleManager
+    /// <summary>
+    /// ElementIdLifecycleManager
+    /// </summary>
+    internal class ElementIdLifecycleManager
     {
         private static Object mSingletonMutex = new object();
         private static ElementIdLifecycleManager? mInstance;

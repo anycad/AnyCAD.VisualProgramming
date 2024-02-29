@@ -5,8 +5,9 @@ using Dynamo.Wpf.ViewModels.Watch3D;
 
 namespace AnyCAD.Rapid.Dynamo.Startup
 {
-    public class RapidDynamoViewModel : DynamoViewModel
+    internal class RapidDynamoViewModel : DynamoViewModel
     {
+        #region Constructors
         protected RapidDynamoViewModel(StartConfiguration startConfiguration) : base(startConfiguration)
         {
 
@@ -31,5 +32,6 @@ namespace AnyCAD.Rapid.Dynamo.Startup
 
             return new RapidDynamoViewModel(startConfiguration);
         }
+        #endregion
     }
 }

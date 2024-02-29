@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AnyCAD.Rapid.Dynamo.Services.Elements
 {
-    public class DisposeLogic
+    /// <summary>
+    /// DisposeLogic
+    /// </summary>
+    internal class DisposeLogic
     {
         /// <summary>
         /// This flag is set to true in the event that you want to

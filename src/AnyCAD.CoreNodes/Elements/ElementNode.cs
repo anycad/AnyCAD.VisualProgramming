@@ -8,7 +8,8 @@ using AnyCAD.Rapid.Dynamo.Services.Persistence;
 namespace AnyCAD.CoreNodes.Elements
 {
     /// <summary>
-    /// 
+    /// ElementNode，AnyCAD.Foundation.Element在Dynamo环境下的适配器
+    /// 实现了与AnyCAD文档对象之间的绑定和生命周期管理
     /// </summary>
     public abstract class ElementNode : IDisposable
     {

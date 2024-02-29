@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj" />
-    <ProjectReference Include="..\AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj" />
+    <ProjectReference Include="$(SolutionDir)\Core\AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj" />
+    <ProjectReference Include="$(SolutionDir)\Core\AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj" />
   </ItemGroup>
 
   <ItemGroup>

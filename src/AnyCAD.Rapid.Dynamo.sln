@@ -5,15 +5,15 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{46198EBE-75CD-4105-B214-F4250F410800}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Sandbox", "AnyCAD.Rapid.Dynamo.Sandbox\AnyCAD.Rapid.Dynamo.Sandbox.csproj", "{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Sandbox", "Demo\AnyCAD.Rapid.Dynamo.Sandbox\AnyCAD.Rapid.Dynamo.Sandbox.csproj", "{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Services", "AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj", "{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Services", "Core\AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj", "{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Startup", "AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj", "{FD52B2EA-4105-4547-AB8C-C6167DE06430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Startup", "Core\AnyCAD.Rapid.Dynamo.Startup\AnyCAD.Rapid.Dynamo.Startup.csproj", "{FD52B2EA-4105-4547-AB8C-C6167DE06430}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.CoreNodes", "AnyCAD.CoreNodes\AnyCAD.CoreNodes.csproj", "{FA6375A7-85E4-48D2-9323-CB161BD466C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.CoreNodes", "Core\AnyCAD.CoreNodes\AnyCAD.CoreNodes.csproj", "{FA6375A7-85E4-48D2-9323-CB161BD466C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.UserNodes", "AnyCAD.UserNodes\AnyCAD.UserNodes.csproj", "{30DC3701-4C0E-45B6-8612-3B20B38FBDD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.UserNodes", "Demo\AnyCAD.UserNodes\AnyCAD.UserNodes.csproj", "{30DC3701-4C0E-45B6-8612-3B20B38FBDD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using DynamoServices;
 using AnyCAD.Foundation;
 
 using AnyCAD.Rapid.Dynamo.Services.Persistence;
-using AnyCAD.CoreNodes.Extension;
+using AnyCAD.CoreNodes.GeometryInterop;
 
 namespace AnyCAD.CoreNodes.Elements
 {

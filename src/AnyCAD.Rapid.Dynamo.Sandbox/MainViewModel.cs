@@ -4,7 +4,7 @@ using AnyCAD.WPF;
 using AnyCAD.Foundation;
 using AnyCAD.Rapid.Dynamo.Startup;
 
-namespace AnyCAD.Rapid.Dynamo.SandBox
+namespace AnyCAD.Rapid.Dynamo.Sandbox
 {
     public partial class MainViewModel
     {

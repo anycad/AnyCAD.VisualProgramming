@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace AnyCAD.Rapid.Dynamo.SandBox
+namespace AnyCAD.Rapid.Dynamo.Sandbox
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{46198EBE-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6AEC4E8E-A6E5-47C3-8A90-73D6BCB2345B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.SandBox", "AnyCAD.Rapid.Dynamo.SandBox\AnyCAD.Rapid.Dynamo.SandBox.csproj", "{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Sandbox", "AnyCAD.Rapid.Dynamo.Sandbox\AnyCAD.Rapid.Dynamo.Sandbox.csproj", "{E2D444FD-9AB3-40EE-B33D-AABBEC3F0D43}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyCAD.Rapid.Dynamo.Services", "AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj", "{BFEC32F1-7CCE-4C2D-BB2C-C7A4705762E2}"
 EndProject

@@ -1,6 +1,6 @@
 ﻿using AnyCAD.Foundation;
 
-namespace AnyCAD.Rapid.Dynamo.SandBox
+namespace AnyCAD.Rapid.Dynamo.Sandbox
 {
     internal class MainDocumentListener : DocumentListener
     {

@@ -10,6 +10,8 @@
 4. 使用Visual Studio打开`AnyCAD.Rapid.Dynamo.sln`，选择Build Solution
 5. 运行Sandbox示例程序，即可开始体验**AnyCAD x Dynamo**
 
+![HelloRapidDynamo](./res/hello_rapid_dynamo.png)
+
 ### Linux
 To be continued..
 

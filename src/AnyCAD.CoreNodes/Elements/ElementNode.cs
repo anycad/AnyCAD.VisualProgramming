@@ -10,7 +10,7 @@ namespace AnyCAD.CoreNodes.Elements
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ElementNode
+    public abstract class ElementNode : IDisposable
     {
         protected void SafeInit(Action init)
         {

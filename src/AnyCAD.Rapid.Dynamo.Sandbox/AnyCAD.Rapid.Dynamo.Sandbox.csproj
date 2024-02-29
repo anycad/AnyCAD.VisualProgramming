@@ -9,6 +9,10 @@
     <BaseOutputPath>$(SolutionDir)..\bin\$(Platform)</BaseOutputPath>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <ApplicationIcon>anycad.ico</ApplicationIcon>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />

@@ -6,7 +6,7 @@
 
 1. 安装运行AnyCAD所需依赖，参考repo：[AnyCAD Rapid .NET Sample](https://gitee.com/anycad/anycad.rapid.net.sample)
 2. 下载对应版本DynamoCore运行时Release包（地址：[Dynamo Release](https://github.com/DynamoDS/Dynamo/releases)或[Dynamo Builds](https://dynamobuilds.com/)，当前使用v3.0.3版本）并解压到任意目录`<DynamoRuntime>`
-3. Clone本仓库代码，打开`src/AnyCAD.Rapid.Dynamo.Sandbox`目录下的`PostBuildStep.bat`文件将`DynamoRuntime=`后的路径替换为上面的目录
+3. Clone本仓库代码，打开`src/Demo/AnyCAD.Rapid.Dynamo.Sandbox`目录下的`PostBuildStep.bat`文件将`DynamoRuntime=`后的路径替换为上面的目录
 4. 使用Visual Studio打开`AnyCAD.Rapid.Dynamo.sln`，选择Build Solution
 5. 运行Sandbox示例程序，即可开始体验**AnyCAD x Dynamo**
 

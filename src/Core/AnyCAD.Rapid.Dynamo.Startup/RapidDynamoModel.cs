@@ -6,6 +6,7 @@ using Dynamo.Models;
 using Dynamo.Applications;
 
 using AnyCAD.Rapid.Dynamo.Services.Elements;
+using Dynamo.Graph.Workspaces;
 
 namespace AnyCAD.Rapid.Dynamo.Startup
 {
@@ -28,6 +29,30 @@ namespace AnyCAD.Rapid.Dynamo.Startup
                 // TODO: others
             };
             return new RapidDynamoModel(config);
+        }
+        #endregion
+
+        #region Events
+        protected override void OnWorkspaceRemoveStarted(WorkspaceModel workspace)
+        {
+            base.OnWorkspaceRemoveStarted(workspace);
+
+            if (workspace is HomeWorkspaceModel)
+                DisposeLogic.IsClosingHomeworkspace = true;
+        }
+
+        protected override void OnWorkspaceRemoved(WorkspaceModel workspace)
+        {
+            base.OnWorkspaceRemoved(workspace);
+
+            if (workspace is HomeWorkspaceModel)
+                DisposeLogic.IsClosingHomeworkspace = false;
+
+            //Unsubscribe the event
+            //foreach (var node in workspace.Nodes.ToList())
+            //{
+            //    node.PropertyChanged -= node_PropertyChanged;
+            //}
         }
         #endregion
 

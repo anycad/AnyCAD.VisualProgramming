@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <BaseOutputPath>$(SolutionDir)..\bin\$(Platform)</BaseOutputPath>
     <OutputType>Library</OutputType>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

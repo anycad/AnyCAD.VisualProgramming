@@ -8,81 +8,16 @@
       "Point": {
         "Key": "Autodesk.DesignScript.Geometry.Point",
         "Value": "ProtoGeometry.dll"
+      },
+      "GPntNode": {
+        "Key": "AnyCAD.CoreNodes.Geometry.GPntNode",
+        "Value": "AnyCAD.CoreNodes.dll"
       }
     }
   },
   "Inputs": [],
   "Outputs": [],
   "Nodes": [
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "Id": "f2cd24a8a3a942b8b274f8764c3dc102",
-      "NodeType": "FunctionNode",
-      "Inputs": [
-        {
-          "Id": "a34051e389fd4d9b9e8d77510b8f4945",
-          "Name": "geometry",
-          "Description": "Geometry",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "bac9eeaa86c045e5ad4eb4cf2d18691c",
-          "Name": "ShapeElementNode",
-          "Description": "ShapeElementNode",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "FunctionSignature": "AnyCAD.CoreNodes.Elements.ShapeElementNode.ByGeometry@Autodesk.DesignScript.Geometry.Geometry",
-      "Replication": "Auto",
-      "Description": "ShapeElementNode.ByGeometry (geometry: Geometry): ShapeElementNode"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "Id": "a032c621b0aa4550beec5dd9c082a68e",
-      "NodeType": "FunctionNode",
-      "Inputs": [
-        {
-          "Id": "62d07b78a9cd4f8ea81682c30a45a3ac",
-          "Name": "centerPoint",
-          "Description": "Center point of circle\n\nPoint\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "171629d84bf34733915a3d66490970dd",
-          "Name": "radius",
-          "Description": "Radius\n\ndouble\nDefault value : 1",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "af9915ffc4d04d4c899702765c186332",
-          "Name": "Circle",
-          "Description": "Circle created with center point and radius",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
-      "Replication": "Auto",
-      "Description": "Creates a Circle with input center Point and radius in the world XY plane, with world Z as normal.\n\nCircle.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Circle"
-    },
     {
       "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
       "Id": "55b555b85e204b8abb6da02359824d34",
@@ -174,7 +109,7 @@
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "ceac86c9f9ed4770a67ce63ad151a626",
+          "Id": "6876a78a354c48ffbe24a69b823e6826",
           "Name": "z",
           "Description": "z",
           "UsingDefaultValue": false,
@@ -185,7 +120,7 @@
       ],
       "Outputs": [
         {
-          "Id": "4bc6c15ab0724c02934fa6fbb8b33baa",
+          "Id": "903c094862bc4ebc9e1e5c9f693ab98c",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -196,26 +131,119 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "Point.ByCoordinates(0, 0, z);"
+      "Code": "GPntNode.ByCoordinates(0, 0, z);"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8afee8c40e4d414aa68ce1619908b846",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "aa0f4302fa55451ea2feca3308bf7352",
+          "Name": "center",
+          "Description": "GPntNode\nDefault value : AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08463338ec874c9aaf0a47145df7e026",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d0fba73080f40da815c4d6ff367e423",
+          "Name": "GCircleNode",
+          "Description": "GCircleNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Geometry.GCircleNode.ByCenterPointRadius@AnyCAD.CoreNodes.Geometry.GPntNode,double",
+      "Replication": "Auto",
+      "Description": "GCircleNode.ByCenterPointRadius (center: GPntNode = AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0), radius: double = 1): GCircleNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "406a4b01d53145ddbc472584167b7d10",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ce15be6583b04d2daac34e83fc98a09c",
+          "Name": "circle",
+          "Description": "GCircleNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4db3c92af7534c24851ffeaace5e896b",
+          "Name": "TopoShapeNode",
+          "Description": "TopoShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Geometry.TopoShapeNode.ByGCicle@AnyCAD.CoreNodes.Geometry.GCircleNode",
+      "Replication": "Auto",
+      "Description": "TopoShapeNode.ByGCicle (circle: GCircleNode): TopoShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "26d61bacbb2c40c6aa8e9b8b7aecc700",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7838f2b352f84cf2a77c3fa71ba24ca6",
+          "Name": "topo",
+          "Description": "TopoShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3d3dd3b5d1614694be1d88dffa484253",
+          "Name": "ShapeElementNode",
+          "Description": "ShapeElementNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Elements.ShapeElementNode.ByTopoShape@AnyCAD.CoreNodes.Geometry.TopoShapeNode",
+      "Replication": "Auto",
+      "Description": "ShapeElementNode.ByTopoShape (topo: TopoShapeNode): ShapeElementNode"
     }
   ],
   "Connectors": [
     {
-      "Start": "af9915ffc4d04d4c899702765c186332",
-      "End": "a34051e389fd4d9b9e8d77510b8f4945",
-      "Id": "2363228a681644d291c931d609298d08",
+      "Start": "203f89a9ceb6486b9bf48f5396525feb",
+      "End": "08463338ec874c9aaf0a47145df7e026",
+      "Id": "c701d2bbae064ea7aa4df9ff80904599",
       "IsHidden": "False"
     },
     {
       "Start": "203f89a9ceb6486b9bf48f5396525feb",
-      "End": "ceac86c9f9ed4770a67ce63ad151a626",
-      "Id": "a4f2828294684f21b9034d4c8af31cf3",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "203f89a9ceb6486b9bf48f5396525feb",
-      "End": "171629d84bf34733915a3d66490970dd",
-      "Id": "670794a96ef840729b0dd80fa5596dcb",
+      "End": "6876a78a354c48ffbe24a69b823e6826",
+      "Id": "754fd5ff47c448169ef8747f965d7282",
       "IsHidden": "False"
     },
     {
@@ -237,15 +265,27 @@
       "IsHidden": "False"
     },
     {
-      "Start": "4bc6c15ab0724c02934fa6fbb8b33baa",
-      "End": "62d07b78a9cd4f8ea81682c30a45a3ac",
-      "Id": "779a4093ed924d7ead7fd36201d4970d",
+      "Start": "903c094862bc4ebc9e1e5c9f693ab98c",
+      "End": "aa0f4302fa55451ea2feca3308bf7352",
+      "Id": "486715b5904c4908907f94f8e716f6c4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8d0fba73080f40da815c4d6ff367e423",
+      "End": "ce15be6583b04d2daac34e83fc98a09c",
+      "Id": "c5cfa2a1785a47109068f7e2919166f5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4db3c92af7534c24851ffeaace5e896b",
+      "End": "7838f2b352f84cf2a77c3fa71ba24ca6",
+      "Id": "173d95c379a84ce6be425a4b6a8eb176",
       "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [],
-  "EnableLegacyPolyCurveBehavior": null,
+  "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -265,9 +305,9 @@
   },
   "Bindings": [
     {
-      "NodeId": "f2cd24a8-a3a9-42b8-b274-f8764c3dc102",
+      "NodeId": "26d61bac-bb2c-40c6-aa8e-9b8b7aecc700",
       "Binding": {
-        "ByGeometry_InClassDecl-1_InFunctionScope-1_Instance0_f2cd24a8-a3a9-42b8-b274-f8764c3dc102": "H4sIAAAAAAAACoXPIQ7AIAxA0btUT1BKoUzvFgRBAnZmOMLdt0wuoXM/eeqnAWe7eqtH6QX2NKC+AYGQiCNbJ+RRBD3M7aMSvEVjjeGwUkfRiRhVUVWrKqnqFiosEX+UVX1+88w3IAr2fz4BAAA="
+        "ByTopoShape_InClassDecl-1_InFunctionScope-1_Instance0_26d61bac-bb2c-40c6-aa8e-9b8b7aecc700": "H4sIAAAAAAAACoXJMQ6AIAwF0Lt0dqB8StXZWxAGElhdZCPc3cSdur3kpUF3e3qrV+mFzjSofiCFSuDDiTKACO9obutlc725MDcsVgUu/qyYG81Vc3eaeeYXmSgmDT4BAAA="
       }
     }
   ],
@@ -282,38 +322,18 @@
     },
     "Camera": {
       "Name": "_Background Preview",
-      "EyeX": -17.0,
-      "EyeY": 24.0,
-      "EyeZ": 50.0,
-      "LookX": 12.0,
-      "LookY": -13.0,
-      "LookZ": -58.0,
-      "UpX": 0.0,
-      "UpY": 1.0,
-      "UpZ": 0.0
+      "EyeX": 42.58694839477539,
+      "EyeY": 23.266376495361328,
+      "EyeZ": -0.5535030364990234,
+      "LookX": -42.43150329589844,
+      "LookY": -8.229276657104492,
+      "LookZ": -5.728921890258789,
+      "UpX": 0.0259418785572052,
+      "UpY": 0.999657392501831,
+      "UpZ": 0.0035021970979869366
     },
     "ConnectorPins": [],
     "NodeViews": [
-      {
-        "Id": "f2cd24a8a3a942b8b274f8764c3dc102",
-        "Name": "ShapeElementNode.ByGeometry",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": 999.0,
-        "Y": 292.5
-      },
-      {
-        "Id": "a032c621b0aa4550beec5dd9c082a68e",
-        "Name": "Circle.ByCenterPointRadius",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": 689.0,
-        "Y": 452.0
-      },
       {
         "Id": "55b555b85e204b8abb6da02359824d34",
         "Name": "Range",
@@ -341,13 +361,43 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 352.0,
-        "Y": 303.0
+        "X": 370.0,
+        "Y": 271.0
+      },
+      {
+        "Id": "8afee8c40e4d414aa68ce1619908b846",
+        "Name": "GCircleNode.ByCenterPointRadius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 734.5,
+        "Y": 436.0
+      },
+      {
+        "Id": "406a4b01d53145ddbc472584167b7d10",
+        "Name": "TopoShapeNode.ByGCicle",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1055.5,
+        "Y": 212.0
+      },
+      {
+        "Id": "26d61bacbb2c40c6aa8e9b8b7aecc700",
+        "Name": "ShapeElementNode.ByTopoShape",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1316.5,
+        "Y": 416.0
       }
     ],
     "Annotations": [],
-    "X": 0.0,
-    "Y": 0.0,
-    "Zoom": 1.0
+    "X": 4.714385417553785,
+    "Y": 59.000893581479545,
+    "Zoom": 0.822695359375
   }
 }

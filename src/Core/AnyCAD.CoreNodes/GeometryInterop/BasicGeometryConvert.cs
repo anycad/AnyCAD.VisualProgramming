@@ -2,6 +2,8 @@
 using AnyCAD.Foundation;
 using Autodesk.DesignScript.Runtime;
 
+using ADGeometry = Autodesk.DesignScript.Geometry.Geometry;
+
 namespace AnyCAD.CoreNodes.GeometryInterop
 {
     [IsVisibleInDynamoLibrary(false)]
@@ -28,12 +30,22 @@ namespace AnyCAD.CoreNodes.GeometryInterop
         }
 
         /// <summary>
+        /// Dynamo圆曲线对象转换
+        /// </summary>
+        /// <param name="circle"></param>
+        /// <returns></returns>
+        public static GCirc To(this Circle circle)
+        {
+            return new GCirc(new GAx2(circle.CenterPoint.To(), circle.Normal.To()), circle.Radius);
+        }
+
+        /// <summary>
         /// Dynamo几何对象转换
         /// </summary>
         /// <param name="geometry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public static TopoShape To(this Geometry geometry)
+        public static TopoShape To(this ADGeometry geometry)
         {
             // TODO
             if (geometry is Curve crv)

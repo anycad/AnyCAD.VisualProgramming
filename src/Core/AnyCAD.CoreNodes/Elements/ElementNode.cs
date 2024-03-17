@@ -31,24 +31,24 @@ namespace AnyCAD.CoreNodes.Elements
         /// <summary>
         /// 若当前对象已经被anycad所拥有，那么在Dispose中不应被删除
         /// </summary>
-        internal bool _isOwned = false;
+        internal bool mIsOwned = false;
 
         [SupressImportIntoVM]
         public abstract Element InternalElement { get; }
 
-        private ObjectId _internalId;
+        private ObjectId mInternalId;
 
         protected ObjectId InternalId
         {
             get
             {
-                if (_internalId == null || _internalId.IsInvalid())
+                if (mInternalId == null || mInternalId.IsInvalid())
                     return InternalElement != null ? InternalElement.GetId() : ObjectId.InvalidId;
-                return _internalId;
+                return mInternalId;
             }
             set
             {
-                _internalId = value;
+                mInternalId = value;
 
                 var manager = ElementIdLifecycleManager.Instance;
                 manager.RegisterAsssociation(Id, this);
@@ -66,7 +66,7 @@ namespace AnyCAD.CoreNodes.Elements
 
             int remainingBindings = manager.UnRegisterAssociation(Id, this);
 
-            if (!_isOwned && remainingBindings == 0 && InternalId.IsValid())
+            if (!mIsOwned && remainingBindings == 0 && InternalId.IsValid())
             {
                 UndoTransaction undo = new(Document);
                 undo.Start("erase");
@@ -78,7 +78,7 @@ namespace AnyCAD.CoreNodes.Elements
                 //This element has gone
                 //but there was something else holding onto the AnyCAD object so don't purge it
 
-                _internalId = ObjectId.InvalidId;
+                mInternalId = ObjectId.InvalidId;
             }
         }
 

@@ -5,6 +5,9 @@ using AnyCAD.Foundation;
 
 using AnyCAD.Rapid.Dynamo.Services.Persistence;
 using AnyCAD.CoreNodes.GeometryInterop;
+using AnyCAD.CoreNodes.Geometry;
+
+using ADGeometry = Autodesk.DesignScript.Geometry.Geometry;
 
 namespace AnyCAD.CoreNodes.Elements
 {
@@ -23,7 +26,7 @@ namespace AnyCAD.CoreNodes.Elements
             SafeInit(() => Init(topoShape));
         }
 
-        public static ShapeElementNode ByGeometry(Geometry geometry)
+        public static ShapeElementNode ByGeometry(ADGeometry geometry)
         {
             if (geometry == null)
             {
@@ -37,6 +40,16 @@ namespace AnyCAD.CoreNodes.Elements
             }
 
             return new ShapeElementNode(topoShape);
+        }
+
+        public static ShapeElementNode ByTopoShape(TopoShapeNode topo)
+        {
+            if (topo == null)
+            {
+                throw new ArgumentNullException(nameof(topo));
+            }
+
+            return new ShapeElementNode(topo.Value);
         }
 
         protected void Init(TopoShape topoShape)

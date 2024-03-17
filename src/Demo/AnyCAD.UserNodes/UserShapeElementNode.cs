@@ -3,6 +3,8 @@ using DynamoServices;
 using AnyCAD.Foundation;
 using AnyCAD.CoreNodes.Elements;
 using AnyCAD.CoreNodes.GeometryInterop;
+using AnyCAD.CoreNodes.Geometry;
+using Autodesk.DesignScript.Runtime;
 
 namespace AnyCAD.UserNodes.Elements
 {
@@ -15,10 +17,15 @@ namespace AnyCAD.UserNodes.Elements
 
         }
 
-        public static UserShapeElementNode BySphereCenterRadius(Point center, double radius = 1.0)
+        public static UserShapeElementNode BySphereCenterRadius([DefaultArgument("GPntNode.ByCoordinates(0, 0, 0)")] GPntNode center, double radius = 1.0)
         {
-            var topoShape = ShapeBuilder.MakeSphere(center.To(), radius);
+            var topoShape = ShapeBuilder.MakeSphere(center.Value, radius);
             return new UserShapeElementNode(topoShape);
+        }
+
+        public static UserShapeElementNode BySphereCenterRadius([DefaultArgument("Point.ByCoordinates(0, 0, 0)")] Point center, double radius = 1.0)
+        {
+            return BySphereCenterRadius(GPntNode.ByNativePoint(center), radius);
         }
 
         public static UserShapeElementNode ByExtrudeProfileHeight(Curve profile, double height = 1.0)

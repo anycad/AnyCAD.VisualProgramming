@@ -26,6 +26,23 @@
                 }
               ],
               "childElements": []
+            },
+            {
+              "text": "Geoemtry",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GPntNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GCircleNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.TopoShapeNode"
+                }
+              ],
+              "childElements": []
             }
           ]
         }

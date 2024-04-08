@@ -18,7 +18,7 @@
               "elementType": "group",
               "include": [
                 {
-                  "path": "AnyCAD.UserNodes.AnyCAD.UserNodes.Elements.UserShapeElementNode"
+                  "path": "AnyCAD.UserNodes.AnyCAD.UserNodes.Elements.UserShapeNode"
                 }
               ]
             }

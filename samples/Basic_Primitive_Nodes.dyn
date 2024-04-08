@@ -1,0 +1,819 @@
+{
+  "Uuid": "28039713-7720-4675-b40c-7da64529ff65",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Basic_Primitive_Nodes",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math.PI": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "95f69ce2c49c4d0597ffe3d489c40f68",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1701c74b29c740e3b41c9322bb493f8e",
+          "Name": "ax",
+          "Description": "CoordinateSystem\nDefault value : Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "774ef7f25ca54c8e99307407d8a04b27",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bc1d5074855c44e2a3e48ad9e2501d38",
+          "Name": "radiusTop",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "60b5a2dec3c841a8be1d2288a1c95170",
+          "Name": "height",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f25c1c471fed4044a1cce8f50615794b",
+          "Name": "angle",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ff9e211659b54fefb4c313fd8096b4de",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.ByConeAxisRadiusHeight@Autodesk.DesignScript.Geometry.CoordinateSystem,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.ByConeAxisRadiusHeight (ax: CoordinateSystem = Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1), radius: double = 1, radiusTop: double = 0, height: double = 1, angle: double = 0): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "196c2c1b166640c390e92859aa0990e2",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0940ad44b5f344b98e09bcb75f28f72e",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a32d2be914324e26ac2309c7c35fe3ab",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "52f5ea2aae3a4ec9b2e5b07e02bdf516",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d1b21db8807543debd2f3065a87cb269",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X, Y, and Z locations, with X and Y Axes set as WCS X and Y Axes.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0, z: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "f623527933d64c8386f0ab8e57bbb9d0",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3089946894254341ab8ce45c903c2cf7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65c41b2be3d84b9d884255ca5a86fc83",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ad91c39c316145bfb781557792e05cb1",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e8093490b27640348fd2dacc39e41ab3",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a58b4ba741c4485c8943a97274525c8f",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b9463fb862d24ce4885e71c632d6fea2",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ae4138731a194ffd953d48eb17a9cba4",
+          "Name": "",
+          "Description": "Value of expression at line 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "3;\n5;\n-0.5;\n8;\n13;\nMath.PI * 2;\nMath.PI;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "02d2173d8fc842f3869d9db5d0c57c7a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b69d8d2585154f9d85ad097bd7739766",
+          "Name": "cs",
+          "Description": "CoordinateSystem\nDefault value : Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4e5dbc00164141c69b1de02fcb3a1e59",
+          "Name": "dx",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ca5843d0c2847318ee9b7201c85879e",
+          "Name": "dy",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5c7f295b7c5b4e12a3749f1548ad83a9",
+          "Name": "dz",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bdea5392644740bba3d513bd59a15882",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.ByBoxAxisLengths@Autodesk.DesignScript.Geometry.CoordinateSystem,double,double,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.ByBoxAxisLengths (cs: CoordinateSystem = Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0), dx: double = 1, dy: double = 1, dz: double = 1): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "4b583fd64c31462f863fd8a7b02bcbba",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3a4fb994d37d469aa703fd1eb7727f01",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6189aac94d5c4e07a0fe9bf2f2f52e31",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0c7dc84b069b48028ddafac9790f4bff",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "eb91870570394750b8f9700147236b68",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X, Y, and Z locations, with X and Y Axes set as WCS X and Y Axes.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0, z: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b74ff0e06d1b40c983a986cc37244ba3",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3b2c07b6996a4ef2a98bea35b4b6b2e6",
+          "Name": "ax",
+          "Description": "CoordinateSystem\nDefault value : Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bc6f0ff17e614393a222d5787d384ac2",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "830eee8c0d7b43fe86fbb3d56439aa70",
+          "Name": "height",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d9f0b323a2eb4b0c9b7ec0403a2a1f08",
+          "Name": "angle",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f61412fc0a574c6187b92493260df42f",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.ByCylinderAxisRadiusHeight@Autodesk.DesignScript.Geometry.CoordinateSystem,double,double,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.ByCylinderAxisRadiusHeight (ax: CoordinateSystem = Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1), radius: double = 1, height: double = 1, angle: double = 0): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5a3d86a1b1594528ad5bcbeceea5d2ad",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b4dfea1130ff46c59f0e49d36ce94eb2",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8cc329f14f984acfb1aabc4bd57ccff1",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "25608c9fb22c404cbc3f9508f244a218",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5f762b24cf774f809717bf66129b9988",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X, Y, and Z locations, with X and Y Axes set as WCS X and Y Axes.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0, z: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "13d0aa4a90ed468fbf1feecbd8b85d61",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "53264fc040904e0489b8162b41b11d80",
+          "Name": "center",
+          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6c79923adf954f1a801cb77b71cc533a",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "47c53acf44a7452d821aaa1029026049",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.BySphereCenterRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.BySphereCenterRadius (center: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "13bab0ec34fb435caddcde76e3e6af94",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c089ddad2ecd476e9b205865016ba985",
+          "Name": "ax",
+          "Description": "CoordinateSystem\nDefault value : Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af5a1ed64161478aa4dd6fe54edf7467",
+          "Name": "majorR",
+          "Description": "double\nDefault value : 2",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "443338f9083f4b9786f65be9d1bb7875",
+          "Name": "minorR",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c03eefdea9194ff6862261a97cd85ea5",
+          "Name": "angle",
+          "Description": "double\nDefault value : 360",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2d7a780dd86a446ea02c6febd2905fe3",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.ByTorusMajorMinorAngle@Autodesk.DesignScript.Geometry.CoordinateSystem,double,double,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.ByTorusMajorMinorAngle (ax: CoordinateSystem = Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin(0, 0, 1), majorR: double = 2, minorR: double = 1, angle: double = 360): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "03e6af2369464f359f8badfb49af414a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "fd152704aee84c50be7ecd4ed8a47fe8",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8fe317dc93594c89ba6abf6c23954434",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b7727b585b944bdbba67ac6138bf491",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a78f9199b9904ed28a3c10da49c6399b",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X, Y, and Z locations, with X and Y Axes set as WCS X and Y Axes.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0, z: double = 0): CoordinateSystem"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d1b21db8807543debd2f3065a87cb269",
+      "End": "1701c74b29c740e3b41c9322bb493f8e",
+      "Id": "c5bda667da944e6692facd70e9af36fa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3089946894254341ab8ce45c903c2cf7",
+      "End": "0940ad44b5f344b98e09bcb75f28f72e",
+      "Id": "ec8951bf344b49b99e5b30fff87b62d3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3089946894254341ab8ce45c903c2cf7",
+      "End": "60b5a2dec3c841a8be1d2288a1c95170",
+      "Id": "637926ac14ba44049de42a3bea50c244",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "65c41b2be3d84b9d884255ca5a86fc83",
+      "End": "3a4fb994d37d469aa703fd1eb7727f01",
+      "Id": "8a9e8268e3bb473f8802bf46e969ddb3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "65c41b2be3d84b9d884255ca5a86fc83",
+      "End": "830eee8c0d7b43fe86fbb3d56439aa70",
+      "Id": "0544ebd4a61e4ea2b24163d3d7403083",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ad91c39c316145bfb781557792e05cb1",
+      "End": "6189aac94d5c4e07a0fe9bf2f2f52e31",
+      "Id": "e6db5e2387dd4650a1bbedb88f6f6142",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e8093490b27640348fd2dacc39e41ab3",
+      "End": "b4dfea1130ff46c59f0e49d36ce94eb2",
+      "Id": "7a1e8881bf064843b0f486456f6d46e8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a58b4ba741c4485c8943a97274525c8f",
+      "End": "fd152704aee84c50be7ecd4ed8a47fe8",
+      "Id": "a4ffc4da343a4ab99b0b8abd21addbf0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b9463fb862d24ce4885e71c632d6fea2",
+      "End": "c03eefdea9194ff6862261a97cd85ea5",
+      "Id": "a35f8495d22b431d85e6c1fa03817835",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "eb91870570394750b8f9700147236b68",
+      "End": "b69d8d2585154f9d85ad097bd7739766",
+      "Id": "fea309d775c74653810e32bd48b7c775",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5f762b24cf774f809717bf66129b9988",
+      "End": "3b2c07b6996a4ef2a98bea35b4b6b2e6",
+      "Id": "6ebb65c3a9a940ecae9e7e28f9f97373",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a78f9199b9904ed28a3c10da49c6399b",
+      "End": "c089ddad2ecd476e9b205865016ba985",
+      "Id": "a4ac31414b32493797910f59f352656b",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "95f69ce2-c49c-4d05-97ff-e3d489c40f68",
+      "Binding": {
+        "ByConeAxisRadiusHeight_InClassDecl-1_InFunctionScope-1_Instance1_95f69ce2-c49c-4d05-97ff-e3d489c40f68": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTCxsDSzNDA2szAAAqXaWADR7KVuHwAAAA==",
+        "ByConeAxisRadiusHeight_InClassDecl-1_InFunctionScope-1_Instance0_95f69ce2-c49c-4d05-97ff-e3d489c40f68": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1MDc2MTY2NTEzNzVSqo0FAEhbo6wfAAAA"
+      }
+    },
+    {
+      "NodeId": "02d2173d-8fc8-42f3-869d-9db5d0c57c7a",
+      "Binding": {
+        "ByBoxAxisLengths_InClassDecl-1_InFunctionScope-1_Instance1_02d2173d-8fc8-42f3-869d-9db5d0c57c7a": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1NLYwNQYCS0NjM6XaWADnfXQpHwAAAA==",
+        "ByBoxAxisLengths_InClassDecl-1_InFunctionScope-1_Instance0_02d2173d-8fc8-42f3-869d-9db5d0c57c7a": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1NDe2MLcAEpYmJkq1sQCKCGYOHwAAAA=="
+      }
+    },
+    {
+      "NodeId": "b74ff0e0-6d1b-40c9-83a9-86cc37244ba3",
+      "Binding": {
+        "ByCylinderAxisRadiusHeight_InClassDecl-1_InFunctionScope-1_Instance1_b74ff0e0-6d1b-40c9-83a9-86cc37244ba3": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1MjKwMLU0NLYwMLFQqo0FAFUlH48fAAAA",
+        "ByCylinderAxisRadiusHeight_InClassDecl-1_InFunctionScope-1_Instance0_b74ff0e0-6d1b-40c9-83a9-86cc37244ba3": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1MjU2NTazNDMwNTRSqo0FAMdvTucfAAAA"
+      }
+    },
+    {
+      "NodeId": "13d0aa4a-90ed-468f-bf1f-eecbd8b85d61",
+      "Binding": {
+        "BySphereCenterRadius_InClassDecl-1_InFunctionScope-1_Instance1_13d0aa4a-90ed-468f-bf1f-eecbd8b85d61": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1trAwNzExNTExMjVTqo0FAKPxyvgfAAAA"
+      }
+    },
+    {
+      "NodeId": "13bab0ec-34fb-435c-addc-de76e3e6af94",
+      "Binding": {
+        "ByTorusMajorMinorAngle_InClassDecl-1_InFunctionScope-1_Instance1_13bab0ec-34fb-435c-addc-de76e3e6af94": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1MzM1NTE2MTEyMTZSqo0FAKNfzesfAAAA",
+        "ByTorusMajorMinorAngle_InClassDecl-1_InFunctionScope-1_Instance0_13bab0ec-34fb-435c-addc-de76e3e6af94": "H4sIAAAAAAAACouuVkpJLElUslIyNzE1NTA1NzCysLA0NTI1MrFQqo0FAGY2Z0sfAAAA"
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.0.3.7597",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "95f69ce2c49c4d0597ffe3d489c40f68",
+        "Name": "UserShapeNode.ByConeAxisRadiusHeight",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 691.7130192215141,
+        "Y": 357.7099428866487
+      },
+      {
+        "Id": "196c2c1b166640c390e92859aa0990e2",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 278.0,
+        "Y": 342.0
+      },
+      {
+        "Id": "f623527933d64c8386f0ab8e57bbb9d0",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -49.32770214428308,
+        "Y": 709.3942855140422
+      },
+      {
+        "Id": "02d2173d8fc842f3869d9db5d0c57c7a",
+        "Name": "UserShapeNode.ByBoxAxisLengths",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 690.8374476484171,
+        "Y": 676.4876570547485
+      },
+      {
+        "Id": "4b583fd64c31462f863fd8a7b02bcbba",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 304.0,
+        "Y": 656.101703345028
+      },
+      {
+        "Id": "b74ff0e06d1b40c983a986cc37244ba3",
+        "Name": "UserShapeNode.ByCylinderAxisRadiusHeight",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 692.5,
+        "Y": 939.5
+      },
+      {
+        "Id": "5a3d86a1b1594528ad5bcbeceea5d2ad",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 316.0,
+        "Y": 942.8135645906427
+      },
+      {
+        "Id": "13d0aa4a90ed468fbf1feecbd8b85d61",
+        "Name": "UserShapeNode.BySphereCenterRadius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 693.1863144792799,
+        "Y": 158.43728629935424
+      },
+      {
+        "Id": "13bab0ec34fb435caddcde76e3e6af94",
+        "Name": "UserShapeNode.ByTorusMajorMinorAngle",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 693.1802463745205,
+        "Y": 1226.470697031146
+      },
+      {
+        "Id": "03e6af2369464f359f8badfb49af414a",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 315.89518783589415,
+        "Y": 1178.2037381857974
+      }
+    ],
+    "Annotations": [],
+    "X": 173.583222250004,
+    "Y": -13.865023834309,
+    "Zoom": 0.8082198663930293
+  }
+}

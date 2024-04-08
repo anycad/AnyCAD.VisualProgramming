@@ -54,5 +54,15 @@ namespace AnyCAD.CoreNodes.GeometryInterop
             }    
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Dynamo坐标系对象转换
+        /// </summary>
+        /// <param name="cs"></param>
+        /// <returns></returns>
+        public static GAx2 To(this CoordinateSystem cs)
+        {
+            return new GAx2(cs.Origin.To(), cs.ZAxis.To(), cs.XAxis.To());
+        }
     }
 }

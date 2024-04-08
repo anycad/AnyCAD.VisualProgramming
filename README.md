@@ -22,3 +22,5 @@ To be continued..
 ## 扩展AnyCAD节点
 
 参考提供的示例项目AnyCAD.UserNodes了解如何扩展和丰富AnyCAD节点
+
+![HelloPrimitive](./res/hello_primitive.png)

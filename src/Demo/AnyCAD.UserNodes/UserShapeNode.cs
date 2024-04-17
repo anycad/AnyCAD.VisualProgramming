@@ -74,18 +74,18 @@ namespace AnyCAD.UserNodes.Elements
         /// <summary>
         /// 通过输入圆柱的轴向、半径、高度和可选的开角创建形状为圆柱的ShapeElement
         /// </summary>
-        /// <param name="ax">CoordinateSystem节点类型定义的圆柱轴向</param>
+        /// <param name="cs">CoordinateSystem节点类型定义的圆柱轴向</param>
         /// <param name="radius">圆柱的半径</param>
         /// <param name="height">圆柱的高度</param>
         /// <param name="angle">圆柱的开角，0表示闭合圆柱</param>
         /// <returns>返回生成的圆柱ShapeElement</returns>
-        public static UserShapeNode ByCylinderAxisRadiusHeight([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem ax,
+        public static UserShapeNode ByCylinderAxisRadiusHeight([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem cs,
                                                                         double radius = 1.0,
                                                                         double height = 1.0,
                                                                         double angle = 0.0)
         {
             // 从输入节点获取轴向，以及其他参数
-            var ax2 = ax.To();
+            var ax2 = cs.To();
             var r = radius;
             var h = height;
             var a = angle;
@@ -100,20 +100,20 @@ namespace AnyCAD.UserNodes.Elements
         /// <summary>
         /// 通过输入圆锥的轴向、底部半径、顶部半径、高度和开角创建形状为圆锥的ShapeElement
         /// </summary>
-        /// <param name="ax">CoordinateSystem节点类型定义的圆锥轴向</param>
+        /// <param name="cs">CoordinateSystem节点类型定义的圆锥轴向</param>
         /// <param name="radius">圆锥的底部半径</param>
         /// <param name="radiusTop">圆锥的顶部半径，如果为0则表示圆锥尖端闭合</param>
         /// <param name="height">圆锥的高度</param>
         /// <param name="angle">圆锥的开角</param>
         /// <returns>返回生成的圆锥ShapeElement</returns>
-        public static UserShapeNode ByConeAxisRadiusHeight([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem ax,
+        public static UserShapeNode ByConeAxisRadiusHeight([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem cs,
                                                                     double radius = 1.0,
                                                                     double radiusTop = 0.0,
                                                                     double height = 1.0,
                                                                     double angle = 0.0)
         {
             // 从输入节点获取轴向，以及其他参数
-            var ax2 = ax.To();
+            var ax2 = cs.To();
             var r = radius;
             var rTop = radiusTop;
             var h = height;
@@ -131,16 +131,16 @@ namespace AnyCAD.UserNodes.Elements
         /// </summary>
         /// <param name="majorR">圆环的主半径，即圆环的中心到圆环上任意点的距离</param>
         /// <param name="minorR">圆环的次半径，即圆环上任意点到圆环中心的最小距离</param>
-        /// <param name="ax">CoordinateSystem节点类型定义的圆环轴向</param>
+        /// <param name="cs">CoordinateSystem节点类型定义的圆环轴向</param>
         /// <param name="angle">圆环的开角，使用弧度制</param>
         /// <returns>返回生成的圆环ShapeElement</returns>
-        public static UserShapeNode ByTorusMajorMinorAngle([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem ax,
+        public static UserShapeNode ByTorusMajorMinorAngle([DefaultArgument("CoordinateSystem.ByOrigin(0, 0, 1)")] CoordinateSystem cs,
                                                                     double majorR = 2.0,
                                                                     double minorR = 1.0,
                                                                     double angle = Math.PI * 2)
         {
             // 从输入节点获取轴向，以及其他参数
-            var ax2 = ax.To();
+            var ax2 = cs.To();
             var mr = majorR;
             var mrTop = minorR;
             var a = angle;

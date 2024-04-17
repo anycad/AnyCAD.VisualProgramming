@@ -25,8 +25,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AnyCAD.Platform.NET" Version="2024.2.1.1045" />
-    <PackageReference Include="AnyCAD.Rapid.NET" Version="2024.2.1.1045" />
+    <PackageReference Include="AnyCAD.Platform.NET" Version="2024.4.15.1505" />
+    <PackageReference Include="AnyCAD.Rapid.NET" Version="2024.4.15.1505" />
     <PackageReference Include="DynamoVisualProgramming.DynamoServices" Version="3.0.4.7880" />
   </ItemGroup>
 

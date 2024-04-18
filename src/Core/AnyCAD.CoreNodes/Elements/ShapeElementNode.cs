@@ -52,6 +52,20 @@ namespace AnyCAD.CoreNodes.Elements
             return new ShapeElementNode(topo.Value);
         }
 
+        public static void SeColor(ShapeElementNode shape, DSCore.Color color)
+        {
+            var shapeElement = shape.InternalShape;
+            if (shapeElement == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            UndoTransaction undo = new(Document);
+            undo.Start("update");
+            shapeElement.SetColor(new Vector3(color.Red / 255.0f, color.Green / 255.0f, color.Blue / 255.0f));
+            undo.Commit();
+        }
+
         protected void Init(TopoShape topoShape)
         {
             // try to reuse from trace

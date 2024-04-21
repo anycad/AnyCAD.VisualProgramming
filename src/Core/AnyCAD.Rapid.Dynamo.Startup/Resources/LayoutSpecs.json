@@ -23,6 +23,9 @@
                 },
                 {
                   "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.ShapeElementNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.MaterialNode"
                 }
               ],
               "childElements": []

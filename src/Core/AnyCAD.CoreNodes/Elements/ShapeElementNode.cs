@@ -21,6 +21,7 @@ namespace AnyCAD.CoreNodes.Elements
         internal ShapeElement InternalShape { get; private set; }
         public override Element InternalElement => InternalShape;
 
+        #region Constructors
         protected ShapeElementNode(TopoShape topoShape)
         {
             SafeInit(() => Init(topoShape));
@@ -51,22 +52,57 @@ namespace AnyCAD.CoreNodes.Elements
 
             return new ShapeElementNode(topo.Value);
         }
+        #endregion
 
-        public static void SeColor(ShapeElementNode shape, DSCore.Color color)
+        #region Setters
+        /// <summary>
+        /// 设置物体颜色
+        /// </summary>
+        /// <param name="color"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public void SetColor(DSCore.Color color)
         {
-            var shapeElement = shape.InternalShape;
+            var shapeElement = InternalShape;
             if (shapeElement == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(InternalShape));
             }
 
             UndoTransaction undo = new(Document);
             undo.Start("update");
-            shapeElement.SetColor(new Vector3(color.Red / 255.0f, color.Green / 255.0f, color.Blue / 255.0f));
+            var tuple = color.To();
+            shapeElement.SetColor(tuple.Item1);
             undo.Commit();
         }
 
-        protected void Init(TopoShape topoShape)
+        /// <summary>
+        /// 设置物体材质
+        /// </summary>
+        /// <param name="material"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public void SetMaterial(MaterialNode material)
+        {
+            var shapeElement = InternalShape;
+            if (shapeElement == null)
+            {
+                throw new ArgumentNullException(nameof(InternalShape));
+            }
+
+            var materialElement = material.InternalMaterial;
+            if (materialElement == null)
+            {
+                throw new ArgumentNullException(nameof(material));
+            }
+
+            UndoTransaction undo = new(Document);
+            undo.Start("update");
+            shapeElement.SetMaterialId(materialElement.GetId());
+            undo.Commit();
+        }
+        #endregion
+
+        #region PrivateUtils
+        private void Init(TopoShape topoShape)
         {
             // try to reuse from trace
             var shapeElement = ShapeElement.Cast(ElementBinder.GetElementFromTrace(Document));
@@ -91,5 +127,6 @@ namespace AnyCAD.CoreNodes.Elements
             InternalShape = shapeElement;
             InternalId = shapeElement.GetId();
         }
+        #endregion
     }
 }

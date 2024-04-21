@@ -1,0 +1,218 @@
+{
+  "Uuid": "d6332d54-800f-4984-9f7a-bb5878387f75",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "test",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "1c21eb23bb5648e1b9779b15b326cf31",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "be5570fd39be439d9d0b09747ce24cd6",
+          "Name": "center",
+          "Description": "GPntNode\nDefault value : AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4bd908de37604f3da1f11d9c0221e2d7",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "548e924b50674ff99aa7c71b18f24305",
+          "Name": "UserShapeNode",
+          "Description": "UserShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.UserNodes.Elements.UserShapeNode.BySphereCenterRadius@AnyCAD.CoreNodes.Geometry.GPntNode,double",
+      "Replication": "Auto",
+      "Description": "UserShapeNode.BySphereCenterRadius (center: GPntNode = AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0), radius: double = 1): UserShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "200d52d461fd4ecc831300d640cdeb52",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7696b4199c62404e8477c5c47877a1fc",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ed2c05840dd742a289b6d7c73c7cec2d",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "44c896d14bc8407394ee5453a0958a3b",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "36a0924d9f15405e91baf35f2537226d",
+          "Name": "GPntNode",
+          "Description": "GPntNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates@double,double,double",
+      "Replication": "Auto",
+      "Description": "GPntNode.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): GPntNode"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "Id": "d51f3c2594564c719daad2f9344be76a",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec7630a6290044b38f065726c658c32d",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Produces numeric values",
+      "InputValue": 1.0
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "36a0924d9f15405e91baf35f2537226d",
+      "End": "be5570fd39be439d9d0b09747ce24cd6",
+      "Id": "4ed5727db74e48deb70c80f642e08a5e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ec7630a6290044b38f065726c658c32d",
+      "End": "4bd908de37604f3da1f11d9c0221e2d7",
+      "Id": "7057f27479dd495ea5af7f1247536afa",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.0.3.7597",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "1c21eb23bb5648e1b9779b15b326cf31",
+        "Name": "UserShapeNode.BySphereCenterRadius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 494.5,
+        "Y": 561.5
+      },
+      {
+        "Id": "200d52d461fd4ecc831300d640cdeb52",
+        "Name": "GPntNode.ByCoordinates",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 120.0,
+        "Y": 554.0
+      },
+      {
+        "Id": "d51f3c2594564c719daad2f9344be76a",
+        "Name": "Number Slider",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 63.0,
+        "Y": 778.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

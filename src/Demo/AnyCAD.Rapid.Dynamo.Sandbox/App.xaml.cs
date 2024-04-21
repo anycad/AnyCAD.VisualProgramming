@@ -1,8 +1,6 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
-namespace AnyCAD.Rapid.Dynamo.SandBox
+namespace AnyCAD.Rapid.Dynamo.Sandbox
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -12,6 +10,10 @@ namespace AnyCAD.Rapid.Dynamo.SandBox
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             AnyCAD.Foundation.Application.Startup();
+
+            // 注册自定义的文档模板
+            AnyCAD.Foundation.DocumentManager.Register<RapidDynamoDocTemplate>();
+            AnyCAD.Foundation.DocumentManager.Instance().SetDocType(RapidDynamoDocTemplate.DocType);
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)

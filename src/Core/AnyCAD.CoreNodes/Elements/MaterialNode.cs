@@ -40,7 +40,7 @@ namespace AnyCAD.CoreNodes.Elements
             for (var itr = ElementIterator.Create(Document, MaterialElement.GetStaticClassId()); itr.More(); itr.Next())
             {
                 var material = MaterialElement.Cast(itr.Current());
-                if (material != null)
+                if (material != null && material.GetName() == name)
                     return new MaterialNode(material);
             }
 

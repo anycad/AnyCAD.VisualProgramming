@@ -10,9 +10,12 @@ namespace AnyCAD.Rapid.Dynamo.Sandbox
     {
         private RenderControl mRenderControl;
         private MainDocumentListener mDocumentListener;
+        private MainWindow mMainWindow;
 
-        public MainViewModel(RenderControl renderControl)
+        public MainViewModel(MainWindow mainWindow, RenderControl renderControl)
         {
+            
+            mMainWindow = mainWindow;
             mRenderControl = renderControl;
         }
 

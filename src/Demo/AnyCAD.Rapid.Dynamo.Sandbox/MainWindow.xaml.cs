@@ -11,7 +11,7 @@ namespace AnyCAD.Rapid.Dynamo.Sandbox
         {
             InitializeComponent();
 
-            var viewModel = new MainViewModel(mRenderCtrl);
+            var viewModel = new MainViewModel(this, mRenderCtrl);
             this.DataContext = viewModel;
         }
 

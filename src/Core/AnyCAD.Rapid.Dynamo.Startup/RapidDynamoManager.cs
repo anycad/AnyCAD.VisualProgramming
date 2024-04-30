@@ -7,6 +7,7 @@ using DyViews = Dynamo.UI.Views;
 
 using System.IO;
 using System.Reflection;
+using System.Windows;
 
 namespace AnyCAD.Rapid.Dynamo.Startup
 {
@@ -38,12 +39,14 @@ namespace AnyCAD.Rapid.Dynamo.Startup
         private DyViews.SplashScreen mSplashScreen;
         private IEnumerable<string> mUserNodesDll = [];
         private string mUserLayoutSpecs;
+        private Window mParentWindow;
         /// <summary>
         /// 启动Dynamo窗口
         /// </summary>
         /// <returns></returns>
-        public bool StartDynamo()
+        public bool StartDynamo(Window parentWindow)
         {
+            mParentWindow = parentWindow;
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly; // TODO: unregister when closing?
 
             mSplashScreen = new();
@@ -81,6 +84,7 @@ namespace AnyCAD.Rapid.Dynamo.Startup
             mDynamoView = new DynamoView(mDynamoViewModel);
             mDynamoView.Loaded += (o, e) => UpdateLibraryLayoutSpec(mUserLayoutSpecs);
             mDynamoView.Show();
+            mDynamoView.Owner = mParentWindow;
             mDynamoView.Activate();
 
             mSplashScreen.DynamicSplashScreenReady -= LoadDynamoView;
